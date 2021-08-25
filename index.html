@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>My Button Component</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>My Button Component</h1>
+        <ButtonCpt></ButtonCpt>
+        <ButtonCpt variant="outline"></ButtonCpt>
+        <ButtonCpt variant="text"></ButtonCpt>
+        <ButtonCpt disableShadow></ButtonCpt>
+        <ButtonCpt disabled></ButtonCpt>
+        <ButtonCpt variant="text" disabled></ButtonCpt>
+        <ButtonCpt startIcon="local_grocery_store"></ButtonCpt>
+        <ButtonCpt endIcon="local_grocery_store"></ButtonCpt>
+        <ButtonCpt size="sm"></ButtonCpt>
+        <ButtonCpt size="md"></ButtonCpt>
+        <ButtonCpt size="lg"></ButtonCpt>
+        <ButtonCpt color="default"></ButtonCpt>
+        <ButtonCpt color="primary"></ButtonCpt>
+        <ButtonCpt color="secondary"></ButtonCpt>
+        <ButtonCpt color="danger"></ButtonCpt> 
+    </div>
+    <script>
+        const app = Vue.createApp({
+        })
+
+        app.component('buttoncpt', {
+            data() {
+                return {
+                    classes: ['button', this.variant, this.size, this.color, { disableshadow: this.disableshadow }, { disabled: this.disabled }, {starticon: this.starticon}, {endicon: this.endicon}]
+                }
+            },
+            props: {
+                disableshadow: Boolean,
+                disabled: Boolean,
+                variant: String,
+                starticon: String,
+                endicon: String,
+                size: String,
+                color: String
+            },
+            computed: {
+                textButton() {
+                    if (this.disabled)
+                        return 'Disabled'
+                    else if (this.color == 'secondary')
+                        return 'Secondary'
+                    else if (this.color == 'danger')
+                        return 'Danger'
+                    else
+                        return 'Default'
+                },
+                textSpan() {
+                    const props = this.$props
+                    let array = []
+                    for(const [key, value] of Object.entries(props)) {
+                        if(value != undefined && value != false)
+                            if(value == true) {
+                                array.push(key)
+                            }
+                            else {
+                                array.push(`${key}="${value}"`)
+                            }
+                    }
+                    return `<Button ${array.join(' ')} />`
+                }
+            },
+            template: `
+            <div>
+                <span class="span-button">{{this.textSpan}}</span>
+                <button type="button" :class="classes" :disabled="disabled">
+                    <span v-if="starticon != undefined" class="material-icons">{{starticon}}</span>   
+                        {{this.textButton}}
+                    <span v-if="endicon != undefined" class="material-icons">{{endicon}}</span>  
+                </button>
+            </div>`
+            })
+
+        const vm = app.mount('#app')
+    </script>
+</body>
+
+</html>
