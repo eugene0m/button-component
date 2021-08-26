@@ -77,4 +77,4 @@ $ git clone https://github.com/eugene0m/button-component.git
 
 ## Contact
 
-- GitHub [@your-username](https://github.com/eugene0m)
+- GitHub [eugene0m](https://github.com/eugene0m)
