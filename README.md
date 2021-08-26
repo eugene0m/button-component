@@ -38,7 +38,7 @@
 
 *First of all: sorry if my English is bad and if there are typos in the project variable names...*
 
-![screenshot](https://imgur.com/TfAhsFT)
+![screenshot](https://i.imgur.com/TfAhsFT.jpg)
 
 Ultra small and simplistic Vue3 component that generates buttons with the desired properties.
 
