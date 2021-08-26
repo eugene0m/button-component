@@ -88,6 +88,27 @@ Just do the following to clone the repo:
 $ git clone https://github.com/eugene0m/button-component.git
 ```
 
+Finally you can call the component via the `<ButtonCpt />` tag, for example :
+
+```html
+  <ButtonCpt variant="outline"></ButtonCpt>
+```
+
+This will give:
+![outline-btn](https://i.imgur.com/5gmUDop.png)
+
+Here is the list of props of the component:
+
+- **variant** which can accept the values `outline` or `text`
+- **disableshadow** which disables the shadow of the button
+- **disabled** that disables the button itself
+- **startIcon** that precedes the button text with the desired icon
+- **endIcon** which makes the button text followed by the desired icon
+- **size** that changes the size and accepts the values `sm` or `md` or `lg`
+- **color** that changes the color and accepts the values `default` or `primary` or `secondary` or `danger`
+
+
+
 ## Contact
 
 - GitHub [eugene0m](https://github.com/eugene0m)
