@@ -56,7 +56,7 @@ The text field (span) above this button will be the following:
 <Button startIcon="local_grocery_store" color="danger" />
 ```
 
-In detail this component you can :
+In detail with this component you can :
 
 - See different button types: default, outline and text
 - Choose to disable box-shadow
