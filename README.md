@@ -56,9 +56,22 @@ The text field (span) above this button will be the following:
 <Button startIcon="local_grocery_store" color="danger" />
 ```
 
+In detail this component you can :
+
+- See different button types: default, outline and text
+- Choose to disable box-shadow
+- Choose to disable the button
+- Choose to have an icon on the left or right
+- Have different button sizes
+- Have different colors
+- When you hover or focus, you can see visual indicators
+- Still access all button attributes
+
+
 ### Built With
 
 - [Vue.js](https://vuejs.org/)
+- [Google Material Icons](https://google.github.io/material-design-icons/)
 
 ## Features
 
